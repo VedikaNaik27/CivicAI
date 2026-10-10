@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  /* Core palette */
+  --navy-950: #0a1628;
+  --navy-900: #0f1f38;
+  --navy-800: #14294a;
+  --navy-700: #1c3a63;
+  --navy-600: #274b7d;
+  --navy-500: #335d99;
+  --navy-100: #e6ecf5;
+  --navy-50: #f2f5fa;
+
+  --bg: #f7f8fa;
+  --surface: #ffffff;
+  --border: #e2e6ed;
+  --border-strong: #cdd4e0;
+
+  --ink-900: #10192b;
+  --ink-700: #3a4459;
+  --ink-500: #667085;
+  --ink-400: #98a2b3;
+
+  --accent: #1c3a63;
+  --accent-bright: #2f6fed;
+
+  --status-resolved: #158a5f;
+  --status-resolved-bg: #e7f6ef;
+  --status-medium: #b8860b;
+  --status-medium-bg: #fdf3dc;
+  --status-high: #c2560c;
+  --status-high-bg: #fdead9;
+  --status-critical: #c62828;
+  --status-critical-bg: #fce6e6;
+  --status-info: #2f6fed;
+  --status-info-bg: #e8f0fe;
+
+  --background: var(--bg);
+  --foreground: var(--ink-900);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-navy-500: var(--navy-500);
+  --color-navy-100: var(--navy-100);
+  --color-navy-50: var(--navy-50);
+
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-ink-900: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+  --color-ink-400: var(--ink-400);
+
+  --color-accent: var(--accent);
+  --color-accent-bright: var(--accent-bright);
+
+  --color-resolved: var(--status-resolved);
+  --color-resolved-bg: var(--status-resolved-bg);
+  --color-medium: var(--status-medium);
+  --color-medium-bg: var(--status-medium-bg);
+  --color-high: var(--status-high);
+  --color-high-bg: var(--status-high-bg);
+  --color-critical: var(--status-critical);
+  --color-critical-bg: var(--status-critical-bg);
+  --color-info: var(--status-info);
+  --color-info-bg: var(--status-info-bg);
+
+  --font-sans: "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Manrope", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+* {
+  border-color: var(--border);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+.leaflet-container {
+  font-family: var(--font-sans), sans-serif;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+.status-dot {
+  animation: pulse-dot 2.2s ease-in-out infinite;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fade-in 0.25s ease-out;
+}
